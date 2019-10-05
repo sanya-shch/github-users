@@ -12,4 +12,3 @@ export const link = '#0099FF';
 
 // Fonts
 export const fontFamily = "'Segoe UI', 'Helvetica Neue',sansserif";
-export const fontSize = '15px';
