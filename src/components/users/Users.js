@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import UserItem from './UserItem';
 import Preloader from '../layout/Preloader';
+import Alerts from '../layout/Alerts';
 import { getUsers } from '../../actions/userActions';
 import { fontFamily, gray2, accent1 } from '../styles';
 
@@ -49,7 +50,7 @@ const Button = styled.button`
     }
 `;
 
-const Users = ({ user: { users, loading }, getUsers }) => {
+const Users = ({ user: { users, loading, error }, getUsers }) => {
 
     const [city, setCity] = useState('Kyiv');
     const [isOpen, setOpen] = useState(false);
@@ -57,6 +58,10 @@ const Users = ({ user: { users, loading }, getUsers }) => {
     useEffect(() => {
         getUsers(city);
     }, []);
+
+    if (error !== null) {
+        return <Alerts error={error}/>;
+    }
 
     if (loading || users === null) {
         return <Preloader/>;

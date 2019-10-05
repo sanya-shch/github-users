@@ -9,6 +9,7 @@ export const gray5 = '#e0dddd';
 export const primary1 = '#6ca583';
 export const accent1 = '#9b8dab';
 export const link = '#0099FF';
+export const error = '#ff0000';
 
 // Fonts
 export const fontFamily = "'Segoe UI', 'Helvetica Neue',sansserif";
